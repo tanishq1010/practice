@@ -20,7 +20,7 @@ def for_all_exam_goal(goal_exam_grade):
         home_data(3721404, goal_exam_grade["Goal"][ind], goal_exam_grade["Grade"][ind],
                   goal_exam_grade["Exam_name"][ind],
                   goal_exam_grade["Goal"][ind],'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoic3R1ZGVudCIsInRpbWVfc3RhbXAiOiIyMDIwLTEwLTE1IDE3OjQyOjI2IFVUQyIsImlzX2d1ZXN0IjpmYWxzZSwiaWQiOjM3MjE0MDQsImVtYWlsIjoiMzYxNTU5NF8xNjAyNzgzNzQ2QGVtYmliZS11c2VyLmNvbSJ9.QYI2fB25BRp4c8KNkHIKSOSYLvxARKIDGxJXstk5OMqmlZiQ-E2kult1tDHHKP7eNtNnh4-upBdjmFQeM8CkVw')
-#         break
+        break
 
 
 if __name__ == '__main__':
@@ -28,21 +28,21 @@ if __name__ == '__main__':
     df_negative_results_all_subjects = pd.DataFrame(columns=['Child_ID', 'Exam', 'Goal', "Grade",
                                                              'Duration/Concept count', 'Type', 'Id', "Title", 'Section_name',
                                                              'Embium_counts', "Subject", "Subject_tagged",
-                                                             "present in subject", "Correctly present in CG","Book Section Present","Practice Section Present","Thumbnail present"])
+                                                             "present in subject", "Correctly present in CG","Book Section Present","Practice Section Present","Thumbnail present",'description present'])
     df_positive_results_all_subjects = pd.DataFrame(columns=['Child_ID', 'Exam', 'Goal', "Grade",
                                                              'Duration/Concept count', 'Type', 'Id', "Title", 'Section_name',
                                                              'Embium_counts', "Subject", "Subject_tagged",
-                                                             "present in subject", "Correctly present in CG","Book Section Present","Practice Section Present","Thumbnail present"])
+                                                             "present in subject", "Correctly present in CG","Book Section Present","Practice Section Present","Thumbnail present",'description present'])
     df_negative_results_all_subjects.to_csv("negative_practice_results_all_subjects.csv", index=False)
     df_positive_results_all_subjects.to_csv("positive_practice_results_all_subjects.csv", index=False)
     df_negative_results = pd.DataFrame(columns=['Child_ID', 'Exam', 'Goal', "Grade",
                                                 'Duration/Concept cpunt', 'Type', 'Id', "Title", 'Section_name',
                                                 'Embium_counts', "Subject", "Subject_tagged", "present only once",
-                                                "Correctly present in CG","Book Section Present","Learn Section Present","Thumbnail present"])
+                                                "Correctly present in CG","Book Section Present","Learn Section Present","Thumbnail present",'description present'])
     df_positive_results = pd.DataFrame(columns=['Child_ID', 'Exam', 'Goal', "Grade",
                                                 'Duration/Concept cpunt', 'Type', 'Id', "Title", 'Section_name',
                                                 'Embium_counts', "Subject", "Subject_tagged", "present only once",
-                                                "Correctly present in CG","Book Section Present","Learn Section Present","Thumbnail present"])
+                                                "Correctly present in CG","Book Section Present","Learn Section Present","Thumbnail present",'description present'])
     df_negative_results.to_csv("negative_practice_results.csv", index=False)
     df_positive_results.to_csv("positive_practice_results.csv", index=False)
 

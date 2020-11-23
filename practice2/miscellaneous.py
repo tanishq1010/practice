@@ -126,13 +126,13 @@ def hero_banner_checker(payload, df_negative_results, df_positive_results, name1
                             df_negative_results.loc[len(df_negative_results)] = home_data + [duration, Type, id, title,
                                                                                          "PRACTICEBANNER", embium_coins,
                                                                                          subject, subject_tagged, "",
-                                                                                         "", "", "", ""]
+                                                                                         "", "", "", "",""]
                             df_negative_results.to_csv(name1, index=False)
                         else:
                             df_positive_results.loc[len(df_positive_results)] = home_data + [duration, Type, id, title,
                                                                                          "PRACTICEBANNER", embium_coins,
                                                                                          subject, subject_tagged, "",
-                                                                                         "", "", "", ""]
+                                                                                         "", "", "", "",""]
                             df_positive_results.to_csv(name2, index=False)
 
                     except:  
@@ -141,13 +141,13 @@ def hero_banner_checker(payload, df_negative_results, df_positive_results, name1
                             df_negative_results.loc[len(df_negative_results)] = home_data + [duration, Type, id, title,
                                                                                          "PRACTICEBANNER", embium_coins,
                                                                                          subject, subject_tagged, "",
-                                                                                         "", "", "", ""]
+                                                                                         "", "", "", "",""]
                             df_negative_results.to_csv(name1, index=False)
                         else:
                             df_positive_results.loc[len(df_positive_results)] = home_data + [duration, Type, id, title,
                                                                                          "PRACTICEBANNER", embium_coins,
                                                                                          subject, subject_tagged, "",
-                                                                                         "", "", "", ""]
+                                                                                         "", "", "", "",""]
                             df_positive_results.to_csv(name2, index=False)
         if flag == 1:
             break

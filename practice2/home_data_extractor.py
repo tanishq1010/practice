@@ -144,13 +144,17 @@ class Source(object):
                         thumbnail = False
                     else:
                         thumbnail = True
-                    if title == "" or description == "" or length == "" or length == 0 or currency < 0 or id == "" or Type == "":
+                    if description=="":
+                        description=False
+                    else:
+                        description=True
+                    if title == "" or length == "" or length == 0 or currency < 0 or id == "" or Type == "":
                         length=minutes_converter(length)
-                        df_negative_results_all_subjects.loc[len(df_negative_results_all_subjects)] = home_data + [length, Type, id, title,section_name,currency,"All Subjects", subject_tagged,"","","","",thumbnail]
+                        df_negative_results_all_subjects.loc[len(df_negative_results_all_subjects)] = home_data + [length, Type, id, title,section_name,currency,"All Subjects", subject_tagged,"","","","",thumbnail,description]
                         df_negative_results_all_subjects.to_csv("negative_practice_results_all_subjects.csv", index=False)
                     else:
                         length=minutes_converter(length)
-                        df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + [length, Type, id, title,section_name,currency,"All Subjects", subject_tagged,"","","","",thumbnail]
+                        df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + [length, Type, id, title,section_name,currency,"All Subjects", subject_tagged,"","","","",thumbnail,description]
                         df_positive_results_all_subjects.to_csv("positive_practice_results_all_subjects.csv", index=False)
 
             if (item["contentType"] == "chapter")and item["content_section_type"]!="EMBIBEPRACTICE":
@@ -169,15 +173,19 @@ class Source(object):
                     subject_tagged = data["subject"]
                     thumb = data["thumb"]
                     # thumbnail=True
+                    if description=="":
+                        description=False
+                    else:
+                        description=True
                     if thumb == "":
                         thumbnail = False
                     else:
                         thumbnail = True
-                    if title == "" or id == "" or Type == ""or description=="" or concept_count<0:
-                        df_negative_results_all_subjects.loc[len(df_negative_results_all_subjects)] = home_data + ["", Type, id, title,section_name,"","All Subjects", subject_tagged,"","","","",thumbnail]
+                    if title == "" or id == "" or Type == "" or concept_count<0:
+                        df_negative_results_all_subjects.loc[len(df_negative_results_all_subjects)] = home_data + ["", Type, id, title,section_name,"","All Subjects", subject_tagged,"","","","",thumbnail,description]
                         df_negative_results_all_subjects.to_csv("negative_practice_results_all_subjects.csv", index=False)
                     else:
-                        df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + [concept_count, Type, id, title,section_name,"","All Subjects", subject_tagged,"","","","",thumbnail]
+                        df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + [concept_count, Type, id, title,section_name,"","All Subjects", subject_tagged,"","","","",thumbnail,description]
                         df_positive_results_all_subjects.to_csv("positive_practice_results_all_subjects.csv", index=False)
 
         home_data = [child_id, exam, goal,grade]
@@ -199,20 +207,20 @@ class Source(object):
         if Books == True and Learn == True :
             df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + ["", "", random.randint(0, 1000000), "",
                                                                                          "All carousals present", "", "",
-                                                                                         "All subject", "", "",Books,Learn,""]
+                                                                                         "All subject", "", "",Books,Learn,"",""]
 
             df_positive_results_all_subjects.to_csv("positive_practice_results_all_subjects.csv", index=False)
         else:
             df_negative_results_all_subjects.loc[len(df_negative_results_all_subjects)] = home_data + ["", "", random.randint(0, 1000000), "",
                                                                                          "All carousals presentL", "", "",
-                                                                                         "All subject", "", "",Books,Learn,""]
+                                                                                         "All subject", "", "",Books,Learn,"",""]
 
             df_negative_results_all_subjects.to_csv("negative_practice_results_all_subjects.csv", index=False)
 
         if all_subjects_present==True:
             df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + ["", "", random.randint(0, 1000000), "",
                                                                                          "All subjet Tags present", "", "",
-                                                                                         "All subjet Tags present", "yes all subjects are present in UI", "","","",""]
+                                                                                         "All subjet Tags present", "yes all subjects are present in UI", "","","","",""]
             # df_positive_results_all_subjects.loc[len(df_positive_results_all_subjects)] = home_data + ["", "", random.randint(0, 1000000), "",
             #                                                                              "All subjet Tags present", "", "",
             #                                                                              "All subjet Tags present", "yes all subjects are present in UI", "","", ""]
@@ -222,7 +230,7 @@ class Source(object):
         else:
             df_negative_results_all_subjects.loc[len(df_negative_results_all_subjects)] = home_data + ["", "", random.randint(0, 1000000), "",
                                                                                          "All subjet Tags present", "", "",
-                                                                                         "All subjet Tags present", "no all subjects are not present in UI", "","","",""]
+                                                                                         "All subjet Tags present", "no all subjects are not present in UI", "","","","",""]
                                                                                          
 
             df_negative_results_all_subjects.to_csv("negative_practice_results_all_subjects.csv", index=False)
