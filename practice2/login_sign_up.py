@@ -14,7 +14,7 @@ def string_generator(size=7):
 
 def Signup():
 	print("Signing Up")  
-	url = 'https://preprodms.embibe.com/user_auth/auth/sign_in'
+	url = 'https://fiberdemoms.embibe.com/user_auth/auth/sign_in'
 	header = 'Content-Type: application/json'
 	password = "embibe1234"
 	res = string_generator(8)
@@ -33,7 +33,7 @@ def Signup():
 
 def login(email_id,password):
 	print("\nUser Logging In")
-	url = 'https://preprodms.embibe.com/user_auth/auth/sign_in'
+	url = 'https://fiberdemoms.embibe.com/user_auth/auth/sign_in'
 	header = 'Content-Type: application/json'
 	# rnum = randrange(len(email_password)-1)
 	login_data={
@@ -55,7 +55,7 @@ def add_user(parent_id,grade):
 	print("\nAdding new user(child)")
 	if (parent_id != None and parent_id != ''):
 		# res = string_generator(6)
-		url = "https://preprodms.embibe.com/user_auth/add?id="+str(parent_id) 
+		url = "https://fiberdemoms.embibe.com/user_auth/add?id="+str(parent_id) 
 		header = 'Content-Type: application/json'
 
 		res = string_generator(7)

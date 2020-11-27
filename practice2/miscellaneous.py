@@ -91,7 +91,7 @@ def hero_banner_checker(payload, df_negative_results, df_positive_results, name1
                     title = data["title"]
                     description = data["description"]
                     duration = data["duration"]
-                    embium_coins = int(data["embium_coins"])
+                    embium_coins = (data["embium_coins"])
                     id = data["id"]
                     Type = data["type"]
                     subject_tagged = data["subject"]
@@ -122,7 +122,7 @@ def hero_banner_checker(payload, df_negative_results, df_positive_results, name1
                     #         df_positive_results.loc[len(df_positive_results)] = home_data + [duration, Type, id, title,"PRACTICEBANNER", embium_coins,subject,subject_tagged,"","","","","",""]
                     #         df_positive_results.to_csv(name2, index=False)
                     
-                        if title == "" or description == "" or duration == "" or duration == 0 or embium_coins < 0 or id == "" or Type == "" or section_id != 100 or title!=str(df_herobanner_csv["chapterName"][0]):
+                        if title == "" or description == "" or duration == "" or duration == 0  or id == "" or Type == "" or section_id != 100 or title!=str(df_herobanner_csv["chapterName"][0]):
                             df_negative_results.loc[len(df_negative_results)] = home_data + [duration, Type, id, title,
                                                                                          "PRACTICEBANNER", embium_coins,
                                                                                          subject, subject_tagged, "",
@@ -137,7 +137,7 @@ def hero_banner_checker(payload, df_negative_results, df_positive_results, name1
 
                     except:  
                         print("HERO BANNER CHECK WITH CVS NOT WORKING")  
-                        if title == "" or description == "" or duration == "" or duration == 0 or embium_coins < 0 or id == "" or Type == "" or section_id != 100 :
+                        if title == "" or description == "" or duration == "" or duration == 0  or id == "" or Type == "" or section_id != 100 :
                             df_negative_results.loc[len(df_negative_results)] = home_data + [duration, Type, id, title,
                                                                                          "PRACTICEBANNER", embium_coins,
                                                                                          subject, subject_tagged, "",

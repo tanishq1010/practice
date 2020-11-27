@@ -16,7 +16,7 @@ class Source(object):
             'Accept': '*/*',
             'Content-Type': 'application/json; charset=UTF-8',
         }
-        self.host = 'https://preprodms.embibe.com'
+        self.host = 'https://fiberdemoms.embibe.com'
 
     def callAPI(self, url, payload, method, token):
         self.headers['embibe-token'] = token
